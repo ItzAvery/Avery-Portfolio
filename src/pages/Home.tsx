@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { projects } from '../data/projects';
+import { withBase } from '../lib/utils';
 
 const featuredWorkItems = [
-  { to: '/project/gravity#Crazy%208%27s%20Sketching.PNG', src: '/images/gravity/Crazy%208%27s%20Sketching.PNG', alt: 'GravityDrive Sketching' },
-  { to: '/project/gravity#Group%20Skecthing%20.JPG', src: '/images/gravity/Group%20Skecthing%20.JPG', alt: 'GravityDrive Group Sketching 1' },
-  { to: '/project/gravity#Group%20Skecthing%203.JPG', src: '/images/gravity/Group%20Skecthing%203.JPG', alt: 'GravityDrive Group Sketching 3' },
-  { to: '/project/gravity#Group%20Sketching%202.JPG', src: '/images/gravity/Group%20Sketching%202.JPG', alt: 'GravityDrive Group Sketching 2' },
-  { to: '/project/gravity#On-Site%20Project%20Breifing.jpg', src: '/images/gravity/On-Site%20Project%20Breifing.jpg', alt: 'GravityDrive On-Site Briefing' },
-  { to: '/project/gravity#On-Site%20Project%20Discussions.jpg', src: '/images/gravity/On-Site%20Project%20Discussions.jpg', alt: 'GravityDrive Discussions' },
-  { to: '/project/gravity#On-Site%20Project%20Observation.jpg', src: '/images/gravity/On-Site%20Project%20Observation.jpg', alt: 'GravityDrive Observation' },
+  { to: '/project/gravity#Crazy%208%27s%20Sketching.PNG', src: withBase('/images/gravity/Crazy%208%27s%20Sketching.PNG'), alt: 'GravityDrive Sketching' },
+  { to: '/project/gravity#Group%20Skecthing%20.JPG', src: withBase('/images/gravity/Group%20Skecthing%20.JPG'), alt: 'GravityDrive Group Sketching 1' },
+  { to: '/project/gravity#Group%20Skecthing%203.JPG', src: withBase('/images/gravity/Group%20Skecthing%203.JPG'), alt: 'GravityDrive Group Sketching 3' },
+  { to: '/project/gravity#Group%20Sketching%202.JPG', src: withBase('/images/gravity/Group%20Sketching%202.JPG'), alt: 'GravityDrive Group Sketching 2' },
+  { to: '/project/gravity#On-Site%20Project%20Breifing.jpg', src: withBase('/images/gravity/On-Site%20Project%20Breifing.jpg'), alt: 'GravityDrive On-Site Briefing' },
+  { to: '/project/gravity#On-Site%20Project%20Discussions.jpg', src: withBase('/images/gravity/On-Site%20Project%20Discussions.jpg'), alt: 'GravityDrive Discussions' },
+  { to: '/project/gravity#On-Site%20Project%20Observation.jpg', src: withBase('/images/gravity/On-Site%20Project%20Observation.jpg'), alt: 'GravityDrive Observation' },
   // keep a couple existing highlights
-  { to: '/project/our#final.png', src: '/images/purdueour/final.png', alt: 'Purdue OUR' },
-  { to: '/project/apl#Picture1.png', src: '/images/johns/Picture1.png', alt: 'Johns Hopkins APL' }
+  { to: '/project/our#final.png', src: withBase('/images/purdueour/final.png'), alt: 'Purdue OUR' },
+  { to: '/project/apl#Picture1.png', src: withBase('/images/johns/Picture1.png'), alt: 'Johns Hopkins APL' }
 ];
 
 export function Home() {
@@ -107,19 +108,19 @@ export function Home() {
               >
                 <div className={`h-[150px] flex items-center justify-center overflow-hidden ${proj.bgClass} p-4`}>
                   {proj.id === 'gravity' && (
-                    <img src="/images/gravity/GravityDriveLogo.jpg" alt="GravityDrive Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src={withBase('/images/gravity/GravityDriveLogo.jpg')} alt="GravityDrive Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                   {proj.id === 'apl' && (
-                    <img src="/images/johns/JohnsHopkinsLogo.png" alt="Johns Hopkins APL Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src={withBase('/images/johns/JohnsHopkinsLogo.png')} alt="Johns Hopkins APL Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                   {proj.id === 'our' && (
-                    <img src="/images/purdueour/OURLogo.jpg" alt="Purdue OUR Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src={withBase('/images/purdueour/OURLogo.jpg')} alt="Purdue OUR Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                   {proj.id === 'donate' && (
-                    <img src="/images/donate/DonateEquityLogo.png" alt="Donate Equity Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src={withBase('/images/donate/DonateEquityLogo.png')} alt="Donate Equity Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                   {proj.id === 'pg' && (
-                    <img src="/images/proctor/P&GLogo.png" alt="P&G Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src={withBase('/images/proctor/P&GLogo.png')} alt="P&G Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                 </div>
                 <div className="p-4 flex-1 flex flex-col">

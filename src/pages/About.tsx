@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { withBase } from '../lib/utils';
 
 const skillPills = [
   'User Research',
@@ -46,7 +47,7 @@ export function About() {
 
       <div className="w-full overflow-hidden border-b-3 border-dark bg-gradient-to-br from-[#b8cfe8] to-[#5a82b0] min-h-[360px] relative">
         <img 
-          src="/images/profile/Dellinger_Avery.png" 
+          src={withBase('/images/profile/Dellinger_Avery.png')} 
           alt="Avery Dellinger III" 
           className="w-full h-[480px] object-cover object-[center_20%] block"
           onError={(e) => {
