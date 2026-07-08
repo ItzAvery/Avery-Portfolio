@@ -1,29 +1,45 @@
-export const projects = [
+export const projects: any[] = [
   {
     id: 'gravity',
     number: '01',
-    title: 'Gravity Drive',
+    title: 'GravityDrive',
     subtitle: 'Centralized Team Management for Landcare Operations',
     semester: 'Spring 2026',
-    client: 'Gravity Drive',
+    client: 'GravityDrive',
     teamSize: '7 People',
     focus: 'Operations UX',
-    status: 'In Progress ●',
-    statusColor: 'text-green',
+    myRole: 'UX Designer',
+    roleBadge: 'UX Designer & Field Researcher',
+    teamwork: 'Working in a team of seven, we split into two parallel workstreams to maximize efficiency. I contributed primarily to user research, observing crew leads during our on-site field research, and developing both low-fidelity and high-fidelity wireframes in Figma. My experience with professional interviews allowed me to confidently guide our research sessions and synthesize complex data to inform our design strategy.',
+    quote: '"I leveraged my experience as a senior to help guide our parallel workstreams, ensuring our user research on the field directly informed our prototyping efforts."',
+    teamworkBullets: [
+      'Contributed to a parallel workstream strategy to divide research and ideation effectively among the 7-person team.',
+      'Participated in on-site field research at landcare jobsites and gathered direct observational data from crew leads.',
+      'Supported the translation of research insights into mid- and high-fidelity wireframes in Figma.'
+    ],
     bgClass: 'bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364]',
     tagColor: 'bg-yellow text-dark',
-    overview: 'Gravity Drive is a centralized team management platform for Landcare Operations Centers. The challenge: field crews, supervisors, and dispatchers all work differently and they need a single system that adapts to each role without sacrificing clarity or speed. This sponsored project is currently in progress.',
-    challenge: 'How do you design a single platform that serves multiple distinct user roles each with different tasks, mental models, and urgency levels without overwhelming any of them?',
+    overview: 'GravityDrive is a professional UX consulting company providing UX research, design, evaluation, and support services to help build better experiences. This sponsored project focused on designing a centralized digital platform for the landcare industry, tailoring a solution for crew leads to consolidate fragmented operational tools into a single system supporting scheduling, equipment, project progress, and crew management.',
+    challenge: 'How can we design scalable solutions that address the highly fragmented, paper-heavy workflows of landcare operations, particularly improving real-time visibility and efficiency for crew leads working in fast-paced field conditions?',
     challengeBullets: [
-      'Landcare operations involve fast-moving, time-sensitive decisions across multiple teams.',
-      'Existing tools weren\'t built for the specific workflows of operations centers.',
-      'Role-based access and clarity were essential, one interface doesn\'t fit all users.'
+      'Fragmented platforms lead to inefficiencies, poor data visibility, operational delays, and redundancies.',
+      'Existing digital solutions are frequently seen as overly complex and poorly suited for offline field conditions.',
+      'Crew leads need a mobile-friendly interface optimized for field use with offline capabilities and clear distinction between urgent alerts and general tasks.'
     ],
     process: [
-      { num: '01', title: 'Industry Research', desc: 'Researched landcare operations, workflow patterns, and existing software to inform design decisions.' },
-      { num: '02', title: 'User Needs Mapping', desc: 'Identified distinct user roles and mapped their core tasks, pain points, and decision-making flows.' },
-      { num: '03', title: 'Workflow Design', desc: 'Translated user needs into role-based dashboards with clear information hierarchy and navigation.' },
-      { num: '04', title: 'Interactive Prototype', desc: 'Building high-fidelity, interactive Figma prototype for stakeholder feedback and testing.' }
+      { num: '01', title: 'Context & Research', desc: 'Built upon prior exploratory research by conducting interviews and field observations with crew leads to identify key pain points such as paper-heavy workflows and siloed communication.' },
+      { num: '02', title: 'Concept Ideation', desc: 'Translated synthesized research insights into low- and mid-fidelity wireframes, mapping out features through a priority matrix and refining them with concept testing sessions.' },
+      { num: '03', title: 'On-Site Field Research & Refinement', desc: 'Conducted in-person field research at multiple jobsites to directly observe crew leads on the job, fueling usability testing that refined task tracking, real-time alerts, and map interactions.' },
+      { num: '04', title: 'High-Fidelity Prototype', desc: 'Finalized an interactive Figma prototype featuring a role-based dashboard, team builder, equipment and materials tracker, gallery, and generated developer handoff documentation.' }
+    ],
+    media: [
+      { type: 'image', src: '/images/gravity/Crazy 8\'s Sketching.PNG', caption: 'Crazy 8\'s Sketching' },
+      { type: 'image', src: '/images/gravity/Group Skecthing .JPG', caption: 'Group Skecthing' },
+      { type: 'image', src: '/images/gravity/Group Skecthing 3.JPG', caption: 'Group Skecthing' },
+      { type: 'image', src: '/images/gravity/Group Sketching 2.JPG', caption: 'Group Sketching' },
+      { type: 'image', src: '/images/gravity/On-Site Project Breifing.jpg', caption: 'On-Site Project Breifing' },
+      { type: 'image', src: '/images/gravity/On-Site Project Discussions.jpg', caption: 'On-Site Project Discussions' },
+      { type: 'image', src: '/images/gravity/On-Site Project Observation.jpg', caption: 'On-Site Project Observation' }
     ]
   },
   {

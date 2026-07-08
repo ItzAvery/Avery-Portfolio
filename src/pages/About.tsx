@@ -1,6 +1,23 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 
+const skillPills = [
+  'User Research',
+  'Research Synthesis',
+  'Interaction Design',
+  'Information Architecture',
+  'Facilitation & Leadership',
+  'Persona Development',
+  'Prototype Storytelling',
+  'Workshop Facilitation',
+  'Concept Testing',
+  'Competitive Analysis',
+  'SME Interviews',
+  'High-Fidelity Prototyping'
+];
+
+const toolPills = ['Figma', 'FigJam', 'Canva', 'Miro', 'Photoshop'];
+
 export function About() {
   return (
     <motion.div 
@@ -41,7 +58,7 @@ export function About() {
       <div className="p-7 md:p-9">
         <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">About Me</p>
         <p className="text-sm leading-[1.8] text-[#333] mb-9">
-          Senior at Purdue University majoring in UX Design (BS in Computer Graphic Technology, Polytechnic Institute), graduating May 2026. I specialize in user research, facilitation, and high-fidelity prototyping, turning complex problems into clear human-centered solutions. I've led research teams across health tech, equity fintech, AI safety, and consumer goods.
+          Graduated from Purdue University in May of 2026, majoring in UX Design (BS in Computer Graphic Technology, Polytechnic Institute). I specialize in user research, facilitation, and high-fidelity prototyping, turning complex problems into clear human-centered solutions. I've workerd in research teams across exploarative AI problems, consumer goods, equity financial tech, and increasing engagement & information management.
         </p>
 
         <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">Education</p>
@@ -60,14 +77,14 @@ export function About() {
 
         <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">UX Skills</p>
         <div className="flex flex-wrap gap-2 mb-8">
-          {['User Research', 'Research Synthesis', 'Interaction Design', 'Information Architecture', 'Facilitation & Leadership', 'Persona Development', 'Prototype Storytelling', 'Workshop Facilitation', 'Concept Testing', 'Competitive Analysis', 'SME Interviews', 'High-Fidelity Prototyping'].map(skill => (
+          {skillPills.map(skill => (
             <span key={skill} className="px-3.5 py-1.5 bg-[#eef0f8] text-blue text-xs font-semibold rounded-md tracking-wide">{skill}</span>
           ))}
         </div>
 
         <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">Software Tools</p>
         <div className="flex flex-wrap gap-2 mb-9">
-          {['Figma', 'FigJam', 'Canva', 'Miro', 'Photoshop'].map(tool => (
+          {toolPills.map(tool => (
             <span key={tool} className="px-3.5 py-1.5 bg-[#fdf2ea] text-orange text-xs font-semibold rounded-md tracking-wide">{tool}</span>
           ))}
         </div>
@@ -78,8 +95,8 @@ export function About() {
             
             <Link to="/project/gravity" className="block mb-5 pb-5 border-b border-[#e8e4de] cursor-pointer transition-colors rounded hover:bg-[#eef0f8] p-3 -mx-3 group">
               <div className="flex justify-between items-start flex-wrap gap-1 mb-0.5">
-                <div className="font-display font-bold text-[13px] text-dark leading-[1.3] group-hover:text-blue">Gravity Drive</div>
-                <div className="text-[11px] text-muted tracking-wide font-medium whitespace-nowrap">Spring 2026 · Now</div>
+                <div className="font-display font-bold text-[13px] text-dark leading-[1.3] group-hover:text-blue">GravityDrive</div>
+                <div className="text-[11px] text-muted tracking-wide font-medium whitespace-nowrap">Spring 2026</div>
               </div>
               <div className="text-xs text-blue font-semibold mb-1.5">UX Designer · UX Studio</div>
               <ul className="list-none">
@@ -149,7 +166,7 @@ export function About() {
             <div className="mb-5 pb-5 border-b border-[#e8e4de]">
               <div className="flex justify-between items-start flex-wrap gap-1 mb-0.5">
                 <div className="font-display font-bold text-[13px] text-dark leading-[1.3]">White Birch Lodge</div>
-                <div className="text-[11px] text-muted tracking-wide font-medium whitespace-nowrap">Jun–Aug 2024 · 2025</div>
+                <div className="text-[11px] text-muted tracking-wide font-medium whitespace-nowrap">Jun–Aug 2024 · 2026</div>
               </div>
               <div className="text-xs text-blue font-semibold mb-1.5">Staffer → Fulltime Kitchen Chef</div>
               <div className="text-[11px] text-muted mb-1.5">Elk Rapids, MI</div>

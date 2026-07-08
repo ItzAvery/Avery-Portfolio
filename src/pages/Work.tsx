@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { projects } from '@/data/projects';
+import { projects } from '../data/projects';
 
 export function Work() {
   return (
@@ -9,7 +9,7 @@ export function Work() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
     >
-      <div className="pt-6 px-7 pb-4 border-b-3 border-blue">
+      <div className="pt-6 px-7 pb-4 border-b-[3px] border-blue">
         <h1 className="font-display font-bold text-[clamp(20px,4vw,32px)] text-blue text-center">Sponsored Projects</h1>
       </div>
       
@@ -18,11 +18,11 @@ export function Work() {
           const isEven = index % 2 !== 0; // 0-indexed, so 1, 3 are even visually
           
           return (
-            <div key={proj.id} className={`border-b-3 border-blue grid grid-cols-1 sm:grid-cols-2 min-h-[360px] ${isEven ? 'sm:[direction:rtl]' : ''}`}>
-              <div className={`p-8 sm:p-7 flex flex-col justify-center ${isEven ? 'sm:border-l-2 sm:border-r-0 [direction:ltr]' : 'sm:border-r-2'} border-blue border-b sm:border-b-0`}>
+            <div key={proj.id} className={`border-b-[3px] border-blue grid grid-cols-1 sm:grid-cols-2 min-h-[360px] ${isEven ? 'sm:[direction:rtl]' : ''}`}>
+              <div className={`p-8 sm:p-7 flex flex-col justify-center ${isEven ? 'sm:border-l-[3px] sm:border-r-0 [direction:ltr]' : 'sm:border-r-[3px]'} border-blue border-b-[3px] sm:border-b-0`}>
                 <div className="font-display font-black text-6xl text-blue/10 leading-none mb-1">{proj.number}</div>
                 <div className="inline-block px-2.5 py-1 bg-orange text-white text-[10px] font-bold tracking-widest uppercase mb-3 self-start">
-                  {proj.semester} {proj.id === 'gravity' ? '· Current' : ''}
+                  {proj.semester}
                 </div>
                 <h2 className="font-display font-bold text-[clamp(16px,2.5vw,22px)] leading-[1.2] text-dark mb-3.5 whitespace-pre-line">
                   {proj.title}:<br/>{proj.subtitle.split(' for ')[0]}
@@ -48,7 +48,7 @@ export function Work() {
               <Link to={`/project/${proj.id}`} className={`flex items-center justify-center min-h-[200px] sm:min-h-[320px] p-0 cursor-pointer hover:opacity-90 ${isEven ? '[direction:ltr]' : ''}`}>
                 <div className={`w-full h-full min-h-[200px] sm:min-h-[300px] flex items-center justify-center flex-col gap-4 p-7 ${proj.bgClass}`}>
                   {proj.id === 'gravity' && (
-                    <img src="/images/gravity/GravityDriveLogo.jpg" alt="Gravity Drive Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src="/images/gravity/GravityDriveLogo.jpg" alt="GravityDrive Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                   {proj.id === 'apl' && (
                     <img src="/images/johns/JohnsHopkinsLogo.png" alt="Johns Hopkins APL Logo" className="max-w-[80%] max-h-[80%] object-contain" />
