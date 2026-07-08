@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { projects } from '../data/projects';
+import { withBase } from '../lib/utils';
 
 export function Work() {
   return (
@@ -48,19 +49,19 @@ export function Work() {
               <Link to={`/project/${proj.id}`} className={`flex items-center justify-center min-h-[200px] sm:min-h-[320px] p-0 cursor-pointer hover:opacity-90 ${isEven ? '[direction:ltr]' : ''}`}>
                 <div className={`w-full h-full min-h-[200px] sm:min-h-[300px] flex items-center justify-center flex-col gap-4 p-7 ${proj.bgClass}`}>
                   {proj.id === 'gravity' && (
-                    <img src="/images/gravity/GravityDriveLogo.jpg" alt="GravityDrive Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src={withBase('/images/gravity/GravityDriveLogo.jpg')} alt="GravityDrive Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                   {proj.id === 'apl' && (
-                    <img src="/images/johns/JohnsHopkinsLogo.png" alt="Johns Hopkins APL Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src={withBase('/images/johns/JohnsHopkinsLogo.png')} alt="Johns Hopkins APL Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                   {proj.id === 'our' && (
-                    <img src="/images/purdueour/OURLogo.jpg" alt="Purdue OUR Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src={withBase('/images/purdueour/OURLogo.jpg')} alt="Purdue OUR Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                   {proj.id === 'donate' && (
-                    <img src="/images/donate/DonateEquityLogo.png" alt="Donate Equity Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src={withBase('/images/donate/DonateEquityLogo.png')} alt="Donate Equity Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                   {proj.id === 'pg' && (
-                    <img src="/images/proctor/P&GLogo.png" alt="P&G Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                    <img src={withBase('/images/proctor/P&GLogo.png')} alt="P&G Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
                 </div>
               </Link>

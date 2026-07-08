@@ -1,3 +1,5 @@
+import { withBase } from '../lib/utils';
+
 export const projects: any[] = [
   {
     id: 'gravity',
@@ -33,13 +35,13 @@ export const projects: any[] = [
       { num: '04', title: 'High-Fidelity Prototype', desc: 'Finalized an interactive Figma prototype featuring a role-based dashboard, team builder, equipment and materials tracker, gallery, and generated developer handoff documentation.' }
     ],
     media: [
-      { type: 'image', src: '/images/gravity/Crazy 8\'s Sketching.PNG', caption: 'Crazy 8\'s Sketching' },
-      { type: 'image', src: '/images/gravity/Group Skecthing .JPG', caption: 'Group Skecthing' },
-      { type: 'image', src: '/images/gravity/Group Skecthing 3.JPG', caption: 'Group Skecthing' },
-      { type: 'image', src: '/images/gravity/Group Sketching 2.JPG', caption: 'Group Sketching' },
-      { type: 'image', src: '/images/gravity/On-Site Project Breifing.jpg', caption: 'On-Site Project Breifing' },
-      { type: 'image', src: '/images/gravity/On-Site Project Discussions.jpg', caption: 'On-Site Project Discussions' },
-      { type: 'image', src: '/images/gravity/On-Site Project Observation.jpg', caption: 'On-Site Project Observation' }
+      { type: 'image', src: withBase('/images/gravity/Crazy 8\'s Sketching.PNG'), caption: 'Crazy 8\'s Sketching' },
+      { type: 'image', src: withBase('/images/gravity/Group Skecthing .JPG'), caption: 'Group Skecthing' },
+      { type: 'image', src: withBase('/images/gravity/Group Skecthing 3.JPG'), caption: 'Group Skecthing' },
+      { type: 'image', src: withBase('/images/gravity/Group Sketching 2.JPG'), caption: 'Group Sketching' },
+      { type: 'image', src: withBase('/images/gravity/On-Site Project Breifing.jpg'), caption: 'On-Site Project Breifing' },
+      { type: 'image', src: withBase('/images/gravity/On-Site Project Discussions.jpg'), caption: 'On-Site Project Discussions' },
+      { type: 'image', src: withBase('/images/gravity/On-Site Project Observation.jpg'), caption: 'On-Site Project Observation' }
     ]
   },
   {
@@ -71,11 +73,11 @@ export const projects: any[] = [
       { num: '04', title: 'UX Recommendations', desc: 'Translated expert insights into strategic UX recommendations and visual research artifacts for APL stakeholders.' }
     ],
     media: [
-      { type: 'image', src: '/images/johns/Picture1.png', icon: '🖼️', caption: 'Artifact 1' },
-      { type: 'image', src: '/images/johns/Picture2.png', icon: '🖼️', caption: 'Artifact 2' },
-      { type: 'image', src: '/images/johns/Picture3.png', icon: '🖼️', caption: 'Artifact 3' },
-      { type: 'image', src: '/images/johns/Picture4.png', icon: '🖼️', caption: 'Artifact 4' },
-      { type: 'image', src: '/images/johns/Picture5.png', icon: '🖼️', caption: 'Artifact 5' }
+      { type: 'image', src: withBase('/images/johns/Picture1.png'), icon: '🖼️', caption: 'Artifact 1' },
+      { type: 'image', src: withBase('/images/johns/Picture2.png'), icon: '🖼️', caption: 'Artifact 2' },
+      { type: 'image', src: withBase('/images/johns/Picture3.png'), icon: '🖼️', caption: 'Artifact 3' },
+      { type: 'image', src: withBase('/images/johns/Picture4.png'), icon: '🖼️', caption: 'Artifact 4' },
+      { type: 'image', src: withBase('/images/johns/Picture5.png'), icon: '🖼️', caption: 'Artifact 5' }
     ]
   },
   {
@@ -111,21 +113,21 @@ export const projects: any[] = [
       { num: '04', title: 'Mid-Fidelity Prototype', desc: 'Worked with 3 of 5 prototype team members to design the OUR Scholarship page, transforming dense info into icon-driven, scannable layouts.' }
     ],
     media: [
-      { type: 'image', src: '/images/purdueour/final.png', icon: '🖼️', caption: 'Final Design 1', fullWidth: true },
-      { type: 'image', src: '/images/purdueour/final2.png', icon: '🖼️', caption: 'Final Design 2' },
-      { type: 'image', src: '/images/purdueour/final3.png', icon: '🖼️', caption: 'Final Design 3' },
-      { type: 'image', src: '/images/purdueour/final4.png', icon: '🖼️', caption: 'Final Design 4' },
-      { type: 'image', src: '/images/purdueour/final5.png', icon: '🖼️', caption: 'Final Design 5' },
-      { type: 'image', src: '/images/purdueour/final6.png', icon: '🖼️', caption: 'Final Design 6' },
-      { type: 'image', src: '/images/purdueour/Final7.png', icon: '🖼️', caption: 'Final Design 7' },
-      { type: 'image', src: '/images/purdueour/final8.png', icon: '🖼️', caption: 'Final Design 8' },
-      { type: 'image', src: '/images/purdueour/final9.png', icon: '🖼️', caption: 'Final Design 9' },
-      { type: 'image', src: '/images/purdueour/final10.png', icon: '🖼️', caption: 'Final Design 10' },
-      { type: 'image', src: '/images/purdueour/image_1.png', icon: '📸', caption: 'Process Image 1' },
-      { type: 'image', src: '/images/purdueour/image_2.png', icon: '📸', caption: 'Process Image 2' },
-      { type: 'image', src: '/images/purdueour/image_3.png', icon: '📸', caption: 'Process Image 3' },
-      { type: 'image', src: '/images/purdueour/image_4.png', icon: '📸', caption: 'Process Image 4' },
-      { type: 'image', src: '/images/purdueour/image_5.png', icon: '📸', caption: 'Process Image 5' }
+      { type: 'image', src: withBase('/images/purdueour/final.png'), icon: '🖼️', caption: 'Final Design 1', fullWidth: true },
+      { type: 'image', src: withBase('/images/purdueour/final2.png'), icon: '🖼️', caption: 'Final Design 2' },
+      { type: 'image', src: withBase('/images/purdueour/final3.png'), icon: '🖼️', caption: 'Final Design 3' },
+      { type: 'image', src: withBase('/images/purdueour/final4.png'), icon: '🖼️', caption: 'Final Design 4' },
+      { type: 'image', src: withBase('/images/purdueour/final5.png'), icon: '🖼️', caption: 'Final Design 5' },
+      { type: 'image', src: withBase('/images/purdueour/final6.png'), icon: '🖼️', caption: 'Final Design 6' },
+      { type: 'image', src: withBase('/images/purdueour/Final7.png'), icon: '🖼️', caption: 'Final Design 7' },
+      { type: 'image', src: withBase('/images/purdueour/final8.png'), icon: '🖼️', caption: 'Final Design 8' },
+      { type: 'image', src: withBase('/images/purdueour/final9.png'), icon: '🖼️', caption: 'Final Design 9' },
+      { type: 'image', src: withBase('/images/purdueour/final10.png'), icon: '🖼️', caption: 'Final Design 10' },
+      { type: 'image', src: withBase('/images/purdueour/image_1.png'), icon: '📸', caption: 'Process Image 1' },
+      { type: 'image', src: withBase('/images/purdueour/image_2.png'), icon: '📸', caption: 'Process Image 2' },
+      { type: 'image', src: withBase('/images/purdueour/image_3.png'), icon: '📸', caption: 'Process Image 3' },
+      { type: 'image', src: withBase('/images/purdueour/image_4.png'), icon: '📸', caption: 'Process Image 4' },
+      { type: 'image', src: withBase('/images/purdueour/image_5.png'), icon: '📸', caption: 'Process Image 5' }
     ]
   },
   {
@@ -161,8 +163,8 @@ export const projects: any[] = [
       { num: '04', title: 'Prioritization Workshop', desc: 'Organized and led a sponsor workshop sorting dashboard and onboarding features by priority, ensuring the sponsor explained his reasoning throughout.' }
     ],
     media: [
-      { type: 'image', src: '/images/donate/image_1.png', icon: '🗂️', caption: 'Comparative Analysis: Duolingo' },
-      { type: 'image', src: '/images/donate/image_2.png', icon: '📊', caption: 'Final Prioritization Matrix' }
+      { type: 'image', src: withBase('/images/donate/image_1.png'), icon: '🗂️', caption: 'Comparative Analysis: Duolingo' },
+      { type: 'image', src: withBase('/images/donate/image_2.png'), icon: '📊', caption: 'Final Prioritization Matrix' }
     ]
   },
   {
@@ -193,14 +195,14 @@ export const projects: any[] = [
       { num: '04', title: 'Grooming Quiz', desc: 'Championed the quiz from concept to final prototype,designed interaction logic, visual layout, and Figma prototype storytelling with full animations.' }
     ],
     media: [
-      { type: 'image', src: '/images/proctor/image_1.gif', icon: '🎬', caption: 'Interaction 1' },
-      { type: 'image', src: '/images/proctor/image_2.gif', icon: '🎬', caption: 'Interaction 2' },
-      { type: 'image', src: '/images/proctor/image_3.gif', icon: '🎬', caption: 'Interaction 3' },
-      { type: 'image', src: '/images/proctor/image_4.gif', icon: '🎬', caption: 'Interaction 4' },
-      { type: 'image', src: '/images/proctor/image_5.gif', icon: '🎬', caption: 'Interaction 5' },
-      { type: 'image', src: '/images/proctor/image_6.gif', icon: '🎬', caption: 'Interaction 6' },
-      { type: 'image', src: '/images/proctor/image_7.gif', icon: '🎬', caption: 'Interaction 7' },
-      { type: 'image', src: '/images/proctor/image.gif', icon: '🎬', caption: 'Interaction 8' }
+      { type: 'image', src: withBase('/images/proctor/image_1.gif'), icon: '🎬', caption: 'Interaction 1' },
+      { type: 'image', src: withBase('/images/proctor/image_2.gif'), icon: '🎬', caption: 'Interaction 2' },
+      { type: 'image', src: withBase('/images/proctor/image_3.gif'), icon: '🎬', caption: 'Interaction 3' },
+      { type: 'image', src: withBase('/images/proctor/image_4.gif'), icon: '🎬', caption: 'Interaction 4' },
+      { type: 'image', src: withBase('/images/proctor/image_5.gif'), icon: '🎬', caption: 'Interaction 5' },
+      { type: 'image', src: withBase('/images/proctor/image_6.gif'), icon: '🎬', caption: 'Interaction 6' },
+      { type: 'image', src: withBase('/images/proctor/image_7.gif'), icon: '🎬', caption: 'Interaction 7' },
+      { type: 'image', src: withBase('/images/proctor/image.gif'), icon: '🎬', caption: 'Interaction 8' }
     ]
   }
 ];

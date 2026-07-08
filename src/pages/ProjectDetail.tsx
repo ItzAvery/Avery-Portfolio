@@ -2,6 +2,7 @@ import { useParams, Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { projects } from '../data/projects';
+import { withBase } from '../lib/utils';
 
 export function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -203,11 +204,11 @@ export function ProjectDetail() {
                 className={`w-[180px] shrink-0 border-2 border-dark bg-white transition-all duration-150 ${p.id === id ? 'opacity-40 cursor-default pointer-events-none' : 'cursor-pointer shadow-[3px_3px_0_var(--color-dark)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_var(--color-dark)]'}`}
               >
                 <div className={`h-20 flex items-center justify-center overflow-hidden ${p.bgClass} p-2`}>
-                  {p.id === 'gravity' && <img src="/images/gravity/GravityDriveLogo.jpg" alt="GravityDrive Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
-                  {p.id === 'apl' && <img src="/images/johns/JohnsHopkinsLogo.png" alt="Johns Hopkins APL Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
-                  {p.id === 'our' && <img src="/images/purdueour/OURLogo.jpg" alt="Purdue OUR Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
-                  {p.id === 'donate' && <img src="/images/donate/DonateEquityLogo.png" alt="Donate Equity Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
-                  {p.id === 'pg' && <img src="/images/proctor/P&GLogo.png" alt="P&G Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
+                  {p.id === 'gravity' && <img src={withBase('/images/gravity/GravityDriveLogo.jpg')} alt="GravityDrive Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
+                  {p.id === 'apl' && <img src={withBase('/images/johns/JohnsHopkinsLogo.png')} alt="Johns Hopkins APL Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
+                  {p.id === 'our' && <img src={withBase('/images/purdueour/OURLogo.jpg')} alt="Purdue OUR Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
+                  {p.id === 'donate' && <img src={withBase('/images/donate/DonateEquityLogo.png')} alt="Donate Equity Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
+                  {p.id === 'pg' && <img src={withBase('/images/proctor/P&GLogo.png')} alt="P&G Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
                 </div>
                 <div className="p-2.5">
                   <div className="font-display font-bold text-[10px] leading-[1.3] text-dark mb-0.5">{p.title}</div>
