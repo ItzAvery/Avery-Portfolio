@@ -45,34 +45,38 @@ export function About() {
         </div>
       </div>
 
-      <div className="w-full overflow-hidden border-b-3 border-dark bg-gradient-to-br from-[#b8cfe8] to-[#5a82b0] min-h-[360px] relative">
-        <img 
-          src={withBase('/images/profile/Dellinger_Avery.png')} 
-          alt="Avery Dellinger III" 
-          className="w-full h-[480px] object-cover object-[center_20%] block"
-          onError={(e) => {
-            e.currentTarget.style.display = 'none';
-          }}
-        />
-      </div>
-
       <div className="p-7 md:p-9">
-        <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">About Me</p>
-        <p className="text-sm leading-[1.8] text-[#333] mb-9">
-          Graduated from Purdue University in May of 2026, majoring in UX Design (BS in Computer Graphic Technology, Polytechnic Institute). I specialize in user research, facilitation, and high-fidelity prototyping, turning complex problems into clear human-centered solutions. I've worked in research teams across explorative AI problems, consumer goods, equity financial tech, and increasing engagement & information management.
-        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6 mb-9 items-start">
+          <div className="order-2 lg:order-1">
+            <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">About Me</p>
+            <p className="text-sm leading-[1.8] text-[#333] mb-7">
+              Graduated from Purdue University in May of 2026, majoring in UX Design (BS in Computer Graphic Technology, Polytechnic Institute). I specialize in user research, facilitation, and high-fidelity prototyping, turning complex problems into clear human-centered solutions. I've worked in research teams across explorative AI problems, consumer goods, equity financial tech, and increasing engagement & information management.
+            </p>
 
-        <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">Education</p>
-        <div className="border-2 border-dark bg-white p-4 mb-9 flex justify-between items-start flex-wrap gap-2.5">
-          <div>
-            <div className="font-display font-bold text-[clamp(12px,2vw,16px)] text-dark mb-1">Purdue University</div>
-            <div className="text-xs text-muted mb-1">BS in Computer Graphic Technology — UX Design</div>
-            <div className="text-xs text-muted mb-1">Polytechnic Institute · West Lafayette, IN · Expected May 2026</div>
-            <div className="mt-2">
-              <div className="text-[11px] text-green font-semibold mb-0.5">Dean's List : Fall 2022</div>
-              <div className="text-[11px] text-green font-semibold mb-0.5">Semester Honors: Spr 2024, Spr 2025, Fall 2025</div>
-              <div className="text-[11px] text-blue font-semibold">Purdue Summer Start Program</div>
+            <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">Education</p>
+            <div className="border-2 border-dark bg-white p-4 flex justify-between items-start flex-wrap gap-2.5">
+              <div>
+                <div className="font-display font-bold text-[clamp(12px,2vw,16px)] text-dark mb-1">Purdue University</div>
+                <div className="text-xs text-muted mb-1">BS in Computer Graphic Technology — UX Design</div>
+                <div className="text-xs text-muted mb-1">Polytechnic Institute · West Lafayette, IN · Expected May 2026</div>
+                <div className="mt-2">
+                  <div className="text-[11px] text-green font-semibold mb-0.5">Dean's List : Fall 2022</div>
+                  <div className="text-[11px] text-green font-semibold mb-0.5">Semester Honors: Spr 2024, Spr 2025, Fall 2025</div>
+                  <div className="text-[11px] text-blue font-semibold">Purdue Summer Start Program</div>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div className="order-1 lg:order-2 rounded-[20px] overflow-hidden border-3 border-dark bg-white shadow-[5px_5px_0_var(--color-dark)]">
+            <img 
+              src={withBase('/images/profile/Dellinger_Avery.jpg')} 
+              alt="Avery Dellinger III" 
+              className="w-full h-[clamp(280px,36vw,420px)] object-cover object-[center_28%] block"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
           </div>
         </div>
 

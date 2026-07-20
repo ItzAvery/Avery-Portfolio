@@ -46,11 +46,11 @@ export function Home() {
       
 
       <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 border-b-2 md:border-b-3 border-blue/40 md:border-blue mt-0">
-        <div className="flex-none w-full md:w-[340px] p-8 md:p-12 bg-blue flex flex-col justify-center items-center text-center">
-          <div className="font-serif italic text-[clamp(22px,2.8vw,36px)] text-white leading-[1.2] mb-5">
-            "I design for the moment I see users <em className="not-italic text-yellow">smile</em>."
+        <div className="flex-none w-full md:w-[340px] p-8 md:p-12 bg-[#efe8dc] border-r-0 md:border-r-2 border-dark/20 flex flex-col justify-center items-center text-center">
+          <div className="font-serif italic text-[clamp(22px,2.8vw,36px)] text-[#3d2b14] leading-[1.2] mb-5">
+            "I design for the moment I see users <em className="not-italic text-[#7a5535]">smile</em>."
           </div>
-          <div className="text-xs tracking-widest uppercase text-white/55 font-semibold">
+          <div className="text-xs tracking-widest uppercase text-[#7a5535]/70 font-semibold">
             Avery Dellinger III — UX Designer, Purdue '26
           </div>
         </div>
@@ -59,21 +59,37 @@ export function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full">
             {[{
               title: "Hey, I'm Avery",
-              text: "UX Designer focused on human-centered solutions. I balance curiosity with craft to create useful, approachable products."
+              text: "UX Designer focused on human-centered solutions. I balance curiosity with craft to create useful, approachable products.",
+              cardClass: 'bg-[#ffd85c] border-dark',
+              titleClass: 'text-dark',
+              textClass: 'text-[#3f3322]',
+              barClass: 'bg-dark'
             },{
               title: "I Ask a lot of Questions",
-              text: "Research-led work: interviews, observation, and synthesis drive the product decisions I make with teams."
+              text: "Research-led work: interviews, observation, and synthesis drive the product decisions I make with teams.",
+              cardClass: 'bg-[#1a3fcc] border-dark',
+              titleClass: 'text-white',
+              textClass: 'text-blue-100',
+              barClass: 'bg-yellow'
             },{
               title: "Sketch first, Digital second",
-              text: "Early, rapid sketching helps me iterate fast and communicate ideas before polishing visuals."
+              text: "Early, rapid sketching helps me iterate fast and communicate ideas before polishing visuals.",
+              cardClass: 'bg-[#e86a1a] border-dark',
+              titleClass: 'text-white',
+              textClass: 'text-orange-100',
+              barClass: 'bg-yellow'
             },{
               title: "Teams make Better Work",
-              text: "I prioritize clear communication and collaborative problem solving to help teams ship confident designs."
+              text: "I prioritize clear communication and collaborative problem solving to help teams ship confident designs.",
+              cardClass: 'bg-[#22a35b] border-dark',
+              titleClass: 'text-white',
+              textClass: 'text-green-100',
+              barClass: 'bg-yellow'
             }].map((item) => (
-              <div key={item.title} className="p-6 flex flex-col items-start md:items-center text-left md:text-center gap-2.5">
-                <div className="h-1.5 w-10 bg-dark rounded mb-3 md:mx-auto" />
-                <div className="font-display font-bold text-xs text-blue tracking-wide mb-1">{item.title}</div>
-                <div className="text-[13px] text-muted leading-[1.65]">{item.text}</div>
+              <div key={item.title} className={`p-6 flex flex-col items-start md:items-center text-left md:text-center gap-2.5 border-b-2 md:border-b-0 md:border-r-2 last:border-r-0 ${item.cardClass}`}>
+                <div className={`h-1.5 w-10 rounded mb-3 md:mx-auto ${item.barClass}`} />
+                <div className={`font-display font-bold text-xs tracking-wide mb-1 ${item.titleClass}`}>{item.title}</div>
+                <div className={`text-[13px] leading-[1.65] ${item.textClass}`}>{item.text}</div>
               </div>
             ))}
           </div>
