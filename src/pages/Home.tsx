@@ -97,7 +97,7 @@ export function Home() {
       </div>
 
       <div className="pt-10">
-        <h2 className="font-display font-bold text-[clamp(22px,4.5vw,40px)] text-blue text-center pb-3.5 border-b-3 border-blue mx-7">Sponsored Projects</h2>
+        <h2 className="font-display font-bold text-[clamp(22px,4.5vw,40px)] text-blue text-center pb-3.5 border-b-3 border-blue mx-7">Selected Work</h2>
         <div className="overflow-x-auto overflow-y-visible p-7 pb-8 thin-scrollbar">
           <div className="flex gap-4 w-max mx-auto">
             {projects.map((proj) => (
@@ -121,6 +121,12 @@ export function Home() {
                   )}
                   {proj.id === 'pg' && (
                     <img src={withBase('/images/proctor/P&GLogo.png')} alt="P&G Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+                  )}
+                  {!['gravity', 'apl', 'our', 'donate', 'pg'].includes(proj.id) && (
+                    <div className="text-center text-white/90 px-4">
+                      <div className="font-display font-black text-[18px] leading-tight">{proj.title}</div>
+                      <div className="text-[10px] uppercase tracking-[0.2em] mt-2 opacity-80">{proj.projectType || 'Project'}</div>
+                    </div>
                   )}
                 </div>
                 <div className="p-4 flex-1 flex flex-col">

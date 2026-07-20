@@ -32,7 +32,7 @@ export function ProjectDetail() {
   }, [id, hash]);
 
   if (!project) {
-    return <div className="p-8">Sponsored project not found</div>;
+    return <div className="p-8">Project not found</div>;
   }
 
   return (
@@ -194,7 +194,7 @@ export function ProjectDetail() {
       </div>
 
       <div className="border-t-3 border-blue pt-7 px-7 bg-cream">
-        <p className="text-[10px] tracking-[0.14em] uppercase text-muted mb-4 font-semibold">More sponsored projects</p>
+        <p className="text-[10px] tracking-[0.14em] uppercase text-muted mb-4 font-semibold">More projects</p>
         <div className="overflow-x-auto thin-scrollbar">
           <div className="flex gap-3 w-max pb-5">
             {projects.map(p => (

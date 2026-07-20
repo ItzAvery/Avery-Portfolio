@@ -204,5 +204,63 @@ export const projects: any[] = [
       { type: 'image', src: withBase('/images/proctor/image_7.gif'), icon: '🎬', caption: 'Interaction 7' },
       { type: 'image', src: withBase('/images/proctor/image.gif'), icon: '🎬', caption: 'Interaction 8' }
     ]
+  },
+  {
+    id: 'capstone',
+    number: '06',
+    title: 'Capstone Project',
+    subtitle: 'Designing a complete end-to-end experience for a real-world challenge',
+    semester: 'Fall 2026',
+    client: 'Capstone Studio',
+    teamSize: '4 People',
+    focus: 'Capstone Experience',
+    myRole: 'Project Lead',
+    bgClass: 'bg-gradient-to-br from-[#4b1d8f] to-[#7c3aed]',
+    tagColor: 'bg-[#f5c800] text-dark',
+    projectType: 'Capstone Project',
+    overview: 'This capstone project brings together research, strategy, and prototyping into a full experience design challenge. It is focused on solving a meaningful product problem from discovery through final presentation.',
+    teamwork: 'I led the team through discovery, concepting, and prototyping while keeping the project aligned to the user problem and the capstone milestones.',
+    teamworkBullets: [
+      'Directed research planning and synthesis across the full project lifecycle.',
+      'Coordinated concept testing and iterative design refinement.',
+      'Prepared final presentation materials and narrative storytelling.'
+    ],
+    challenge: 'The main challenge was turning a broad, complex problem into a focused, testable experience with clear direction and a compelling final outcome.',
+    process: [
+      { num: '01', title: 'Discovery', desc: 'Defined the problem space and framed the opportunity through research and stakeholder input.' },
+      { num: '02', title: 'Concepting', desc: 'Explored multiple directions and narrowed them into a clear product strategy.' },
+      { num: '03', title: 'Prototype', desc: 'Built and refined a polished prototype that communicated the experience clearly.' },
+      { num: '04', title: 'Presentation', desc: 'Prepared the final case study and storytelling assets for review.' }
+    ],
+    media: []
+  },
+  {
+    id: 'individual',
+    number: '07',
+    title: 'Individual Project',
+    subtitle: 'A self-directed design exploration built around a personal prompt',
+    semester: 'Summer 2026',
+    client: 'Independent',
+    teamSize: 'Solo',
+    focus: 'Independent Design',
+    myRole: 'Designer & Researcher',
+    bgClass: 'bg-gradient-to-br from-[#0f766e] to-[#14b8a6]',
+    tagColor: 'bg-white text-dark',
+    projectType: 'Individual Project',
+    overview: 'This individual project is a self-directed exploration where I shaped the problem, research approach, and design outcome from start to finish.',
+    teamwork: 'Because it was an individual effort, I focused on owning the full process from discovery and synthesis to prototyping and presentation.',
+    teamworkBullets: [
+      'Defined the problem and research direction independently.',
+      'Created the design system and visual direction for the experience.',
+      'Built a complete case study to communicate the work clearly.'
+    ],
+    challenge: 'The challenge was balancing scope, clarity, and craft while carrying the entire project independently from ideation through execution.',
+    process: [
+      { num: '01', title: 'Ideation', desc: 'Framed the opportunity and established a clear design direction.' },
+      { num: '02', title: 'Research', desc: 'Gathered insights and used them to guide the design decisions.' },
+      { num: '03', title: 'Design', desc: 'Turned the concept into a clean, polished experience.' },
+      { num: '04', title: 'Reflection', desc: 'Documented the outcomes and design rationale in a focused case study.' }
+    ],
+    media: []
   }
 ];

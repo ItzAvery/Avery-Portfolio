@@ -59,7 +59,7 @@ export function About() {
       <div className="p-7 md:p-9">
         <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">About Me</p>
         <p className="text-sm leading-[1.8] text-[#333] mb-9">
-          Graduated from Purdue University in May of 2026, majoring in UX Design (BS in Computer Graphic Technology, Polytechnic Institute). I specialize in user research, facilitation, and high-fidelity prototyping, turning complex problems into clear human-centered solutions. I've workerd in research teams across exploarative AI problems, consumer goods, equity financial tech, and increasing engagement & information management.
+          Graduated from Purdue University in May of 2026, majoring in UX Design (BS in Computer Graphic Technology, Polytechnic Institute). I specialize in user research, facilitation, and high-fidelity prototyping, turning complex problems into clear human-centered solutions. I've worked in research teams across explorative AI problems, consumer goods, equity financial tech, and increasing engagement & information management.
         </p>
 
         <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">Education</p>
@@ -92,7 +92,7 @@ export function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
           <div>
-            <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">UX Sponsored Project Experience</p>
+            <p className="font-display font-bold text-[11px] tracking-[0.14em] uppercase text-blue mb-4 pb-2 border-b-2 border-blue">UX Project Experience</p>
             
             <Link to="/project/gravity" className="block mb-5 pb-5 border-b border-[#e8e4de] cursor-pointer transition-colors rounded hover:bg-[#eef0f8] p-3 -mx-3 group">
               <div className="flex justify-between items-start flex-wrap gap-1 mb-0.5">
@@ -157,6 +157,32 @@ export function About() {
                 <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Led Figma storytelling and cross-team alignment for grooming sub-team.</li>
               </ul>
               <div className="text-[11px] text-blue font-bold tracking-wide mt-1.5">View sponsored project →</div>
+            </Link>
+
+            <Link to="/project/capstone" className="block mb-5 pb-5 border-b border-[#e8e4de] cursor-pointer transition-colors rounded hover:bg-[#eef0f8] p-3 -mx-3 group">
+              <div className="flex justify-between items-start flex-wrap gap-1 mb-0.5">
+                <div className="font-display font-bold text-[13px] text-dark leading-[1.3] group-hover:text-blue">Capstone Project</div>
+                <div className="text-[11px] text-muted tracking-wide font-medium whitespace-nowrap">Fall 2026</div>
+              </div>
+              <div className="text-xs text-blue font-semibold mb-1.5">Project Lead · Capstone Studio</div>
+              <ul className="list-none">
+                <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Directed discovery, concepting, and prototyping for a full capstone experience.</li>
+                <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Shaped the final narrative and presentation for the project outcome.</li>
+              </ul>
+              <div className="text-[11px] text-blue font-bold tracking-wide mt-1.5">View capstone project →</div>
+            </Link>
+
+            <Link to="/project/individual" className="block mb-5 pb-5 border-b border-[#e8e4de] cursor-pointer transition-colors rounded hover:bg-[#eef0f8] p-3 -mx-3 group">
+              <div className="flex justify-between items-start flex-wrap gap-1 mb-0.5">
+                <div className="font-display font-bold text-[13px] text-dark leading-[1.3] group-hover:text-blue">Individual Project</div>
+                <div className="text-[11px] text-muted tracking-wide font-medium whitespace-nowrap">Summer 2026</div>
+              </div>
+              <div className="text-xs text-blue font-semibold mb-1.5">Designer · Independent</div>
+              <ul className="list-none">
+                <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Created the full project from problem framing through final concepting.</li>
+                <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Built a self-directed case study and polished design narrative.</li>
+              </ul>
+              <div className="text-[11px] text-blue font-bold tracking-wide mt-1.5">View individual project →</div>
             </Link>
 
           </div>
