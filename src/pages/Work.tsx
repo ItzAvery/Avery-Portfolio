@@ -46,22 +46,22 @@ export function Work() {
         <Link to={`/project/${proj.id}`} className={`flex items-center justify-center min-h-[200px] sm:min-h-[320px] p-0 cursor-pointer hover:opacity-90 ${isEven ? '[direction:ltr]' : ''}`}>
           <div className={`w-full h-full min-h-[200px] sm:min-h-[300px] flex items-center justify-center flex-col gap-4 p-7 project-banner ${proj.bgClass}`}>
             {proj.id === 'gravity' && (
-              <img src={withBase('/images/gravity/GravityDriveLogo.jpg')} alt="GravityDrive Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+              <img src={withBase('/images/gravity/GravityDriveLogo.jpg')} alt="GravityDrive Logo" className="w-[clamp(160px,72%,320px)] h-[clamp(100px,52%,190px)] object-contain" />
             )}
             {proj.id === 'apl' && (
-              <img src={withBase('/images/johns/JohnsHopkinsLogo.png')} alt="Johns Hopkins APL Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+              <img src={withBase('/images/johns/JohnsHopkinsLogo.png')} alt="Johns Hopkins APL Logo" className="w-[clamp(160px,72%,320px)] h-[clamp(100px,52%,190px)] object-contain" />
             )}
             {proj.id === 'our' && (
-              <img src={withBase('/images/purdueour/OURLogo.jpg')} alt="Purdue OUR Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+              <img src={withBase('/images/purdueour/OURLogo.jpg')} alt="Purdue OUR Logo" className="w-[clamp(160px,72%,320px)] h-[clamp(100px,52%,190px)] object-contain" />
             )}
             {proj.id === 'donate' && (
-              <img src={withBase('/images/donate/DonateEquityLogo.png')} alt="Donate Equity Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+              <img src={withBase('/images/donate/DonateEquityLogo.png')} alt="Donate Equity Logo" className="w-[clamp(160px,72%,320px)] h-[clamp(100px,52%,190px)] object-contain" />
             )}
             {proj.id === 'pg' && (
-              <img src={withBase('/images/proctor/P&GLogo.png')} alt="P&G Logo" className="max-w-[80%] max-h-[80%] object-contain" />
+              <img src={withBase('/images/proctor/P&GLogo.png')} alt="P&G Logo" className="w-[clamp(160px,72%,320px)] h-[clamp(100px,52%,190px)] object-contain" />
             )}
             {proj.id === 'capstone' && (
-              <img src={withBase('/images/Capstone/image.png')} alt="Capstone Project" className="max-w-[100%] max-h-[100%] object-contain" />
+              <img src={withBase('/images/Capstone/image.png')} alt="Capstone Project" className="w-[clamp(160px,72%,320px)] h-[clamp(100px,52%,190px)] object-contain" />
             )}
           </div>
         </Link>
