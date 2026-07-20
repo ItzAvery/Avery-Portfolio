@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { useMemo } from 'react';
 import { projects } from '../data/projects';
 import { withBase } from '../lib/utils';
 
 const featuredWorkItems = [
+  { to: '/project/capstone#capstone-group-poster.jpg', src: withBase('/images/Capstone/capstone-group-poster.jpg'), alt: 'IXL Team with poster' },
+  { to: '/project/capstone#apl-shirts-group.jpg', src: withBase('/images/Capstone/apl-shirts-group.jpg'), alt: 'IXL APL shirts group' },
+  { to: '/project/capstone#poster-full-closeup.jpg', src: withBase('/images/Capstone/poster-full-closeup.jpg'), alt: 'IXL poster closeup' },
+  { to: '/project/capstone#interview-session-bw.jpg', src: withBase('/images/Capstone/interview-session-bw.jpg'), alt: 'IXL interview session' },
+  { to: '/project/capstone#avery-with-poster.jpg', src: withBase('/images/Capstone/avery-with-poster.jpg'), alt: 'Avery with IXL poster' },
   { to: '/project/gravity#Crazy%208%27s%20Sketching.PNG', src: withBase('/images/gravity/Crazy%208%27s%20Sketching.PNG'), alt: 'GravityDrive Sketching' },
   { to: '/project/gravity#Group%20Skecthing%20.JPG', src: withBase('/images/gravity/Group%20Skecthing%20.JPG'), alt: 'GravityDrive Group Sketching 1' },
   { to: '/project/gravity#Group%20Skecthing%203.JPG', src: withBase('/images/gravity/Group%20Skecthing%203.JPG'), alt: 'GravityDrive Group Sketching 3' },
@@ -17,6 +23,14 @@ const featuredWorkItems = [
 ];
 
 export function Home() {
+  const capstoneProjects = projects.filter((proj) => proj.projectType === 'Capstone Project');
+  const sponsoredProjects = projects.filter((proj) => !proj.projectType || proj.projectType === 'Sponsored Project');
+  const homeWorkProjects = [...capstoneProjects, ...sponsoredProjects];
+  const randomizedFeaturedWorkItems = useMemo(
+    () => [...featuredWorkItems].sort(() => Math.random() - 0.5),
+    []
+  );
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 12 }}
@@ -97,16 +111,21 @@ export function Home() {
       </div>
 
       <div className="pt-10">
-        <h2 className="font-display font-bold text-[clamp(22px,4.5vw,40px)] text-blue text-center pb-3.5 border-b-3 border-blue mx-7">Selected Work</h2>
+        <h2 className="font-display font-bold text-[clamp(22px,4.5vw,40px)] text-blue text-center pb-3.5 border-b-3 border-blue mx-7">All Work</h2>
         <div className="overflow-x-auto overflow-y-visible p-7 pb-8 thin-scrollbar">
           <div className="flex gap-4 w-max mx-auto">
-            {projects.map((proj) => (
+            {homeWorkProjects.map((proj, index) => (
+              (() => {
+                const cardNumber = String(index + 1).padStart(2, '0');
+                const cardTerm = proj.id === 'capstone' ? 'Year Long' : proj.semester.split(' ')[0];
+
+                return (
               <Link 
                 key={proj.id} 
                 to={`/project/${proj.id}`}
                 className="w-[260px] shrink-0 border-[3px] border-dark bg-white cursor-pointer transition-all duration-200 shadow-[4px_4px_0_var(--color-dark)] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[7px_7px_0_var(--color-dark)] flex flex-col"
               >
-                <div className={`h-[150px] flex items-center justify-center overflow-hidden ${proj.bgClass} p-4`}>
+                <div className={`h-[150px] flex items-center justify-center overflow-hidden project-banner ${proj.bgClass} p-4`}>
                   {proj.id === 'gravity' && (
                     <img src={withBase('/images/gravity/GravityDriveLogo.jpg')} alt="GravityDrive Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
@@ -122,7 +141,10 @@ export function Home() {
                   {proj.id === 'pg' && (
                     <img src={withBase('/images/proctor/P&GLogo.png')} alt="P&G Logo" className="max-w-[80%] max-h-[80%] object-contain" />
                   )}
-                  {!['gravity', 'apl', 'our', 'donate', 'pg'].includes(proj.id) && (
+                  {proj.id === 'capstone' && (
+                    <img src={withBase('/images/Capstone/image.png')} alt="Capstone Project" className="max-w-[100%] max-h-[100%] object-contain" />
+                  )}
+                  {!['gravity', 'apl', 'our', 'donate', 'pg', 'capstone'].includes(proj.id) && (
                     <div className="text-center text-white/90 px-4">
                       <div className="font-display font-black text-[18px] leading-tight">{proj.title}</div>
                       <div className="text-[10px] uppercase tracking-[0.2em] mt-2 opacity-80">{proj.projectType || 'Project'}</div>
@@ -130,12 +152,14 @@ export function Home() {
                   )}
                 </div>
                 <div className="p-4 flex-1 flex flex-col">
-                  <div className="text-[10px] tracking-[0.14em] text-orange font-semibold mb-1 uppercase">{proj.number} · {proj.semester.split(' ')[0]}</div>
+                  <div className="text-[10px] tracking-[0.14em] text-orange font-semibold mb-1 uppercase">{cardNumber} · {cardTerm}</div>
                   <div className="font-display font-bold text-[13px] leading-[1.3] text-dark mb-1.5">{proj.title}</div>
                   <div className="text-[11px] text-muted leading-[1.5]">{proj.semester}<br/>{proj.focus}</div>
-                  <span className="inline-block mt-auto pt-3 text-[10px] font-semibold tracking-widest uppercase text-blue after:content-['_\u2192']">More info</span>
+                  <span className="inline-block mt-auto pt-3 text-[10px] font-semibold tracking-widest uppercase text-blue after:content-['\2192']">More info</span>
                 </div>
               </Link>
+            );
+            })()
             ))}
           </div>
         </div>
@@ -147,7 +171,7 @@ export function Home() {
           <div className="flex gap-2.5 px-7 pb-4 w-max animate-[scroll-loop_130s_linear_infinite] hover:[animation-play-state:paused]">
             {[...Array(6)].map((_, i) => (
               <div key={i} className="flex gap-2.5">
-                {featuredWorkItems.map((item) => (
+                {randomizedFeaturedWorkItems.map((item) => (
                   <Link key={`${item.to}-${i}`} to={item.to} className="w-[180px] h-[125px] shrink-0 border-2 border-dark overflow-hidden bg-[#e8e4de] block hover:opacity-80 transition-opacity">
                     <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
                   </Link>

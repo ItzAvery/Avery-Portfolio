@@ -8,6 +8,10 @@ export function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
   const { hash } = useLocation();
   const project = projects.find(p => p.id === id);
+  const moreProjects = [
+    ...projects.filter(p => p.id === 'capstone'),
+    ...projects.filter(p => p.id !== 'capstone')
+  ];
 
   useEffect(() => {
     if (hash) {
@@ -43,7 +47,7 @@ export function ProjectDetail() {
       key={id}
     >
       <div className="min-h-[320px] flex items-end relative overflow-hidden">
-        <div className={`absolute inset-0 ${project.bgClass}`}></div>
+        <div className={`absolute inset-0 project-banner ${project.bgClass}`}></div>
         <div className="relative z-10 p-9 w-full">
           <Link to="/work" className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-white/70 hover:text-white transition-colors mb-4 before:content-['\2190']">
             All sponsored projects
@@ -157,28 +161,69 @@ export function ProjectDetail() {
           
           {project.media ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-1">
-              {project.media.map((item: any, i: number) => (
-                <div key={i} id={item.src.split('/').pop()} className={`bg-[#e8e4de] border-2 border-dashed border-[#bbb] flex flex-col items-center justify-center text-[#999] text-xs text-center relative overflow-hidden ${item.fullWidth ? 'sm:col-span-2' : 'aspect-[4/3]'}`}>
-                  {item.type === 'video' ? (
-                    <video 
-                      src={item.src} 
-                      controls 
-                      className="w-full h-full object-contain bg-black"
-                    />
-                  ) : (
-                    <img 
-                      src={item.src} 
-                      alt={item.caption || ''} 
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                  {item.caption && (
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-2 flex items-center justify-center gap-2">
-                      <span className="font-semibold text-[11px] uppercase tracking-widest">{item.caption}</span>
-                    </div>
-                  )}
-                </div>
-              ))}
+              {project.media.map((item: any, i: number) => {
+                const isTallMedia = item.type === 'video' || item.type === 'pdf';
+                const isYouTubeVideo = item.type === 'video' && /youtube(?:-nocookie)?\.com|youtu\.be/.test(item.src);
+
+                return (
+                  <div key={i} id={item.src.split('/').pop()} className={`bg-[#e8e4de] border-2 border-dashed border-[#bbb] flex flex-col items-center justify-center text-[#999] text-xs text-center relative overflow-hidden ${item.fullWidth ? 'sm:col-span-2' : 'aspect-[4/3]'} ${isTallMedia ? 'min-h-[460px]' : ''}`}>
+                    {item.type === 'video' && isYouTubeVideo ? (
+                      <>
+                        <iframe
+                          src={item.src}
+                          title={item.caption || 'YouTube video'}
+                          className="w-full h-full"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                        <a
+                          href={item.link || item.src}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="absolute top-2 right-2 px-2 py-1 bg-blue text-white text-[10px] font-semibold rounded"
+                        >
+                          Watch on YouTube
+                        </a>
+                      </>
+                    ) : item.type === 'video' ? (
+                      <video
+                        src={item.src}
+                        defaultMuted
+                        controls
+                        className="w-full h-full object-contain bg-black"
+                      />
+                    ) : item.type === 'pdf' ? (
+                      <div className="w-full h-full bg-white">
+                        <iframe
+                          src={item.src}
+                          title={item.caption || 'PDF Document'}
+                          className="w-full h-full"
+                        />
+                        <a
+                          href={item.src}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="absolute top-2 right-2 px-2 py-1 bg-blue text-white text-[10px] font-semibold rounded"
+                        >
+                          Open PDF
+                        </a>
+                      </div>
+                    ) : (
+                      <img
+                        src={item.src}
+                        alt={item.caption || ''}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                    {item.caption && (
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-2 flex items-center justify-center gap-2 pointer-events-none">
+                        <span className="font-semibold text-[11px] uppercase tracking-widest">{item.caption}</span>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-1">
@@ -197,25 +242,37 @@ export function ProjectDetail() {
         <p className="text-[10px] tracking-[0.14em] uppercase text-muted mb-4 font-semibold">More projects</p>
         <div className="overflow-x-auto thin-scrollbar">
           <div className="flex gap-3 w-max pb-5">
-            {projects.map(p => (
+            {moreProjects.map(p => {
+              const [cardTitlePrefix, ...cardTitleRest] = p.title.split(': ');
+              const cardTitleSuffix = cardTitleRest.join(': ');
+
+              return (
               <Link 
                 key={p.id} 
                 to={`/project/${p.id}`}
                 className={`w-[180px] shrink-0 border-2 border-dark bg-white transition-all duration-150 ${p.id === id ? 'opacity-40 cursor-default pointer-events-none' : 'cursor-pointer shadow-[3px_3px_0_var(--color-dark)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_var(--color-dark)]'}`}
               >
-                <div className={`h-20 flex items-center justify-center overflow-hidden ${p.bgClass} p-2`}>
+                <div className={`h-20 flex items-center justify-center overflow-hidden project-banner ${p.bgClass} p-2`}>
                   {p.id === 'gravity' && <img src={withBase('/images/gravity/GravityDriveLogo.jpg')} alt="GravityDrive Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
                   {p.id === 'apl' && <img src={withBase('/images/johns/JohnsHopkinsLogo.png')} alt="Johns Hopkins APL Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
                   {p.id === 'our' && <img src={withBase('/images/purdueour/OURLogo.jpg')} alt="Purdue OUR Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
                   {p.id === 'donate' && <img src={withBase('/images/donate/DonateEquityLogo.png')} alt="Donate Equity Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
                   {p.id === 'pg' && <img src={withBase('/images/proctor/P&GLogo.png')} alt="P&G Logo" className="max-w-[80%] max-h-[80%] object-contain" />}
+                  {p.id === 'capstone' && <img src={withBase('/images/Capstone/image.png')} alt="Capstone Project" className="max-w-[100%] max-h-[100%] object-contain" />}
                 </div>
                 <div className="p-2.5">
-                  <div className="font-display font-bold text-[10px] leading-[1.3] text-dark mb-0.5">{p.title}</div>
+                  {p.id === 'capstone' ? (
+                    <div className="font-display text-[10px] leading-[1.3] text-dark mb-0.5">
+                      <span className="font-bold">{cardTitlePrefix}:</span>
+                      <span className="font-normal"> {cardTitleSuffix}</span>
+                    </div>
+                  ) : (
+                    <div className="font-display font-bold text-[10px] leading-[1.3] text-dark mb-0.5">{p.title}</div>
+                  )}
                   <div className="text-[10px] text-muted">{p.semester}</div>
                 </div>
               </Link>
-            ))}
+            );})}
           </div>
         </div>
       </div>

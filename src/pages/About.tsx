@@ -26,7 +26,7 @@ export function About() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
     >
-      <div className="bg-brown pt-11 px-7 pb-9 relative overflow-hidden">
+      <div className="project-banner banner-theme-about pt-11 px-7 pb-9 relative overflow-hidden">
         <div className="absolute -top-[60px] -right-[60px] w-[280px] h-[280px] bg-[radial-gradient(circle,rgba(245,200,0,0.18)_0%,transparent_65%)] rounded-full"></div>
         <div className="text-[11px] tracking-[0.18em] uppercase text-yellow mb-4 font-semibold relative z-10">UX Designer · Researcher · Purdue University</div>
         <h1 className="font-display font-black text-[clamp(28px,6vw,64px)] text-white leading-[0.95] tracking-tight mb-3.5 uppercase relative z-10">
@@ -161,28 +161,15 @@ export function About() {
 
             <Link to="/project/capstone" className="block mb-5 pb-5 border-b border-[#e8e4de] cursor-pointer transition-colors rounded hover:bg-[#eef0f8] p-3 -mx-3 group">
               <div className="flex justify-between items-start flex-wrap gap-1 mb-0.5">
-                <div className="font-display font-bold text-[13px] text-dark leading-[1.3] group-hover:text-blue">Capstone Project</div>
-                <div className="text-[11px] text-muted tracking-wide font-medium whitespace-nowrap">Fall 2026</div>
+                <div className="font-display font-bold text-[13px] text-dark leading-[1.3] group-hover:text-blue">IXL x JHU</div>
+                <div className="text-[11px] text-muted tracking-wide font-medium whitespace-nowrap">Fall 2025 – Spring 2026</div>
               </div>
-              <div className="text-xs text-blue font-semibold mb-1.5">Project Lead · Capstone Studio</div>
+              <div className="text-xs text-blue font-semibold mb-1.5">UX Designer / Research Lead · Johns Hopkins APL</div>
               <ul className="list-none">
-                <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Directed discovery, concepting, and prototyping for a full capstone experience.</li>
-                <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Shaped the final narrative and presentation for the project outcome.</li>
+                <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Led SME interview operations and synthesized findings from 11 participants across mission-control-related roles.</li>
+                <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Co-authored an academic paper, presented at Purdue OUR, and supported conference-facing communication deliverables.</li>
               </ul>
               <div className="text-[11px] text-blue font-bold tracking-wide mt-1.5">View capstone project →</div>
-            </Link>
-
-            <Link to="/project/individual" className="block mb-5 pb-5 border-b border-[#e8e4de] cursor-pointer transition-colors rounded hover:bg-[#eef0f8] p-3 -mx-3 group">
-              <div className="flex justify-between items-start flex-wrap gap-1 mb-0.5">
-                <div className="font-display font-bold text-[13px] text-dark leading-[1.3] group-hover:text-blue">Individual Project</div>
-                <div className="text-[11px] text-muted tracking-wide font-medium whitespace-nowrap">Summer 2026</div>
-              </div>
-              <div className="text-xs text-blue font-semibold mb-1.5">Designer · Independent</div>
-              <ul className="list-none">
-                <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Created the full project from problem framing through final concepting.</li>
-                <li className="text-xs text-[#444] leading-[1.65] pl-3.5 relative mb-1 before:content-['\2192'] before:absolute before:left-0 before:text-orange before:text-[9px] before:top-0.5">Built a self-directed case study and polished design narrative.</li>
-              </ul>
-              <div className="text-[11px] text-blue font-bold tracking-wide mt-1.5">View individual project →</div>
             </Link>
 
           </div>

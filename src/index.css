@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Fraunces:ital,wght@0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Fraunces:ital,wght@0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -47,6 +47,42 @@ body {
 .thin-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: var(--color-blue) var(--color-cream);
+}
+
+.project-banner {
+  --banner-base: #2f5f7a;
+  background-color: var(--banner-base);
+  background-image:
+    radial-gradient(120% 120% at 50% 50%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.16) 100%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0 2px, rgba(255, 255, 255, 0) 2px 18px);
+}
+
+.banner-theme-gravity {
+  --banner-base: #67b7dc;
+}
+
+.banner-theme-apl {
+  --banner-base: #2747b8;
+}
+
+.banner-theme-our {
+  --banner-base: #d1ad22;
+}
+
+.banner-theme-donate {
+  --banner-base: #2b78c9;
+}
+
+.banner-theme-pg {
+  --banner-base: #c8662a;
+}
+
+.banner-theme-capstone {
+  --banner-base: #1f3f8d;
+}
+
+.banner-theme-about {
+  --banner-base: #8a5a33;
 }
 
 @keyframes scroll-loop {
